@@ -4,29 +4,29 @@ on:
     inputs:
       name:
         description: 'Manual triggered workflow.'
-        default: 'HelloWorld'
+        default: 'Trigger Workflow'
         required: true
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: build example and deploy to minikube
+    name: Build custom-nginx image and deploy to minikube instance
     steps:
     - uses: actions/checkout@v2
-    - name: Start minikube
+    - name: Start Minikube
       uses: medyagh/setup-minikube@master
-    - name: Check the cluster
+    - name: Check pre-build cluster
       run: kubectl get pods -A
-    - name: Build image
+    - name: Build custom nginx image
       run: |
         export SHELL=/bin/bash
         eval $(minikube -p minikube docker-env)
         docker build -f ./Dockerfile -t sysadmins-custom-nginx .
         echo -n "verifying images:"
         docker images        
-    - name: Deploy to minikube
+    - name: Deploy to Minikube
       run:
         kubectl apply -f ./minikube-deploy.yaml
-    - name: Test service URLs
+    - name: Test if URL is responding with curl
       run: |
         minikube service list
         minikube service nginx-service --url
