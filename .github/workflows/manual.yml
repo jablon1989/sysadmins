@@ -8,8 +8,8 @@ on:
         required: true
 jobs:
   job1:
-    runs-on: ubuntu-latest
-    name: Build custom-nginx image and deploy to minikube instance
+    runs-on: [self-hosted, linux, arm]
+    name: SysAdmins task
     steps:
     - uses: actions/checkout@v2
     - name: Start Minikube
