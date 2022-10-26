@@ -1,9 +1,0 @@
-﻿{
-  "agentId": 3,
-  "agentName": "test",
-  "poolId": 1,
-  "poolName": "Default",
-  "serverUrl": "https://pipelines.actions.githubusercontent.com/ATkqz4ZCgTaLyJitVbmL6GdwuuhURfE2BFviEc3xJKf8sipEOW",
-  "gitHubUrl": "https://github.com/jablon1989/sysadmins",
-  "workFolder": "_work"
-}
