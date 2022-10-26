@@ -8,7 +8,7 @@ on:
         required: true
 jobs:
   job1:
-    runs-on: [self-hosted, linux, arm]
+    runs-on: [self-hosted, Linux, X64, sysadmins]
     name: SysAdmins task
     steps:
     - uses: actions/checkout@v2
