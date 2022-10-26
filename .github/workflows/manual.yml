@@ -11,9 +11,6 @@ jobs:
     runs-on: [self-hosted, Linux, X64, sysadmins]
     name: SysAdmins task
     steps:
-    # - uses: actions/checkout@v2
-    # - name: Start Minikube
-    #   uses: medyagh/setup-minikube@master
     - name: Check pre-build cluster
       run: kubectl get pods -A
     - name: Build custom nginx image
